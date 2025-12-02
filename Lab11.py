@@ -88,7 +88,6 @@ def assignment_graph(assignments):
     plt.hist(scores, bins = [0, 25, 50, 75, 100] )
     plt.title(f"Scores for {name}")
     plt.xlabel("Score")
-    plt.ylabel("Frequency")
     plt.show()
 
 def main():
