@@ -32,7 +32,7 @@ def load_assignments(filename):
         return assignments
 
 def student_grade(students, assignments):
-    name = input("Enter student name:").strip()
+    name = input("What is the student's name:").strip()
 
     student_id = None
     for id, n in students.items():
@@ -41,7 +41,7 @@ def student_grade(students, assignments):
             break
 
     if student_id is None:
-        print("Student not found")
+        print("0")
         return
 
     total = 0
@@ -57,7 +57,7 @@ def student_grade(students, assignments):
         return
 
     percent = round(total/count)
-    print(f"{students[student_id]}'s grade: {percent}% (based on {count} submissions)")
+    print(percent)
 
 def assignment_stats(assignments):
     name = input("Enter assignment name: ").strip()
@@ -85,7 +85,7 @@ def assignment_graph(assignments):
 
     scores = [score for (_, score) in assignments[name]]
 
-    plt.hist(scores, bins = [0, 25, 50, 75, 100] )
+    plt.hist(scores, bins = [0, 25, 50, 75, 100, 101] )
     plt.title(f"Scores for {name}")
     plt.xlabel("Score")
     plt.show()
